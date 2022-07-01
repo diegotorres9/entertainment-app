@@ -1,27 +1,31 @@
 import React from 'react';
 import movies from '../movies';
+import Searchbar from './Searchbar';
 
 class Movies extends React.Component {
     render() {
         return (
-            <div className='grid'>
-            <h1 className='title' style={{color: "#fff"}}>Movies</h1>
-            {movies.map((movie, key) => {
-                return(
-                    <div className="movie" key={key}>
-                    <Movie
-                    key={key}
-                    title={movie.title}
-                    category={movie.category}
-                    year={movie.year}
-                    rating={movie.rating}
-                    imagesmall={movie.thumbnail.regular.small}
-                    imagemedium={movie.thumbnail.regular.medium}
-                    imagelarge={movie.thumbnail.regular.large}
-                    />
-                    </div>
-                )
-            })}
+            <div>
+            <Searchbar />
+                <div className='grid'>
+                <h1 className='title' style={{color: "#fff"}}>Movies</h1>
+                {movies.map((movie, key) => {
+                    return(
+                        <div className="movie" key={key}>
+                        <Movie
+                        key={key}
+                        title={movie.title}
+                        category={movie.category}
+                        year={movie.year}
+                        rating={movie.rating}
+                        imagesmall={movie.thumbnail.regular.small}
+                        imagemedium={movie.thumbnail.regular.medium}
+                        imagelarge={movie.thumbnail.regular.large}
+                        />
+                        </div>
+                    )
+                })}
+                </div>
             </div>
         )
     }

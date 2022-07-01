@@ -40,3 +40,6 @@ nav a:nth-child(3) {
 .searchbar-container svg {
   margin-right: 16px;
 }
+.searchbar-container input {
+  width: 257px;
+}
