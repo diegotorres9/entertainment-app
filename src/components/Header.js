@@ -25,12 +25,4 @@ const Header = () => (
 );
 
 
-
-// const array = [];
-// let links = document.getElementsByTagName("a");
-// for(var i = 0, max=links.length; i<max; i++) {
-//     array.push(links[i].href);
-//     console.log(array);
-// }
-
 export default Header;

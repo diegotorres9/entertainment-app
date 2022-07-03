@@ -1,33 +1,64 @@
-import React from "react";
-// import { useLocation } from "react-router-dom";
+import React, { useState } from "react";
 
-
-// const usePathname = () => {
-//     const location = useLocation()
-//     return location.pathname
-// }
-
-
-class Searchbar extends React.Component {
-    render() {
-        const currentPath = window.location.pathname;
-        console.log(currentPath);
-        return (
-            <div className="searchbar-container">
-                <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M27.613 25.72 23.08 21.2a10.56 10.56 0 0 0 2.253-6.533C25.333 8.776 20.558 4 14.667 4S4 8.776 4 14.667c0 5.89 4.776 10.666 10.667 10.666A10.56 10.56 0 0 0 21.2 23.08l4.52 4.533a1.333 1.333 0 0 0 1.893 0 1.333 1.333 0 0 0 0-1.893ZM6.667 14.667a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z" fill="#FFF"/></svg>
-                <input
-                    type="text"
-                    placeholder=
-                    {
-                        currentPath === "/" ? "Search for movies or TV Series" 
-                        : currentPath === "/movies" ? "Search for movies"
-                        : currentPath === "/series" ? "Search for TV series"
-                        : currentPath === "/bookmarks" ? "Search for bookmarked shows" : "Searh Here"
-                    }
-                />
-            </div>
-        )
+export default function Searchbar() {
+    const currentPath = window.location.pathname;
+    const [query, setQuery] = useState("");
+    const handleChange = (e) => {
+        e.preventDefault();
+        setQuery(e.target.value);
     }
+    if(query.length > 0 ){
+        console.log(query);
+    }
+    return(
+        <div>
+        <div className="searchbar-container">
+            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M27.613 25.72 23.08 21.2a10.56 10.56 0 0 0 2.253-6.533C25.333 8.776 20.558 4 14.667 4S4 8.776 4 14.667c0 5.89 4.776 10.666 10.667 10.666A10.56 10.56 0 0 0 21.2 23.08l4.52 4.533a1.333 1.333 0 0 0 1.893 0 1.333 1.333 0 0 0 0-1.893ZM6.667 14.667a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z" fill="#FFF"/></svg>
+            <input
+                type="text"
+                placeholder=
+                {
+                    currentPath === "/" ? "Search for movies or TV Series" 
+                    : currentPath === "/movies" ? "Search for movies"
+                    : currentPath === "/series" ? "Search for TV series"
+                    : currentPath === "/bookmarks" ? "Search for bookmarked shows" : "Searh Here"
+                }
+                onChange={handleChange}
+                value={query}
+            />
+        </div>
+        <div className="search-results">
+
+        </div>
+        </div>
+    )
 }
 
-export default Searchbar;
+// class Searchbar extends React.Component {
+//     render() {
+//         const currentPath = window.location.pathname;
+//         const [query, setQuery] = useState("");
+//         return (
+//             <div>
+//             <div className="searchbar-container">
+//                 <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M27.613 25.72 23.08 21.2a10.56 10.56 0 0 0 2.253-6.533C25.333 8.776 20.558 4 14.667 4S4 8.776 4 14.667c0 5.89 4.776 10.666 10.667 10.666A10.56 10.56 0 0 0 21.2 23.08l4.52 4.533a1.333 1.333 0 0 0 1.893 0 1.333 1.333 0 0 0 0-1.893ZM6.667 14.667a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z" fill="#FFF"/></svg>
+//                 <input
+//                     type="text"
+//                     placeholder=
+//                     {
+//                         currentPath === "/" ? "Search for movies or TV Series" 
+//                         : currentPath === "/movies" ? "Search for movies"
+//                         : currentPath === "/series" ? "Search for TV series"
+//                         : currentPath === "/bookmarks" ? "Search for bookmarked shows" : "Searh Here"
+//                     }
+//                 />
+//             </div>
+//             <div className="search-results">
+
+//             </div>
+//             </div>
+//         )
+//     }
+// }
+
+// export default Searchbar;

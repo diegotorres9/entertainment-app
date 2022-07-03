@@ -5,7 +5,7 @@ class Home extends React.Component {
     render() {
         return(
             <div>
-            <Searchbar/>
+            <Searchbar />
                 <h1>Trending</h1>
                 <h2>Recommended for you</h2>
             </div>
