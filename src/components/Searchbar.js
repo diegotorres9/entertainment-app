@@ -27,9 +27,6 @@ export default function Searchbar() {
                 value={query}
             />
         </div>
-        <div className="search-results">
-
-        </div>
         </div>
     )
 }

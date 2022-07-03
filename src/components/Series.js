@@ -1,5 +1,4 @@
 import React from "react";
-import series from "../series";
 import Searchbar from "./Searchbar";
 
 class Series extends React.Component {
@@ -9,7 +8,7 @@ class Series extends React.Component {
             <Searchbar />
                 <div className="grid">
                     <h1 className="title" style={{color: "#fff"}}>Series</h1>
-                    {series.map((serie, key) => {
+                    {/* {series.map((serie, key) => {
                         return(
                             <div className="serie" key={key}>
                                 <Serie
@@ -24,26 +23,26 @@ class Series extends React.Component {
                                 />
                             </div>
                         )
-                    })}
+                    })} */}
                 </div>
             </div>
         )
     }
 }
-const Serie = ({title, category, year, rating, imagesmall, imagemedium, imagelarge}) => {
-    return (
-        <>
-        <img className='serie-image'
-        loading='lazy'
-        src={imagelarge}
-        srcSet={`${imagesmall} 300w, ${imagemedium} 768w, ${imagelarge} 1280w`} 
-        alt={title} />
-            <p className='year'> {year} </p>
-            <span className='category'><img src="./assets/icon-category-tv.svg" alt="" /> <p>{category}</p> </span>
-            <p className='rating'> {rating} </p>
-            <p className='title'> {title} </p>
-    </>
-    )
-}
+// const Serie = ({title, category, year, rating, imagesmall, imagemedium, imagelarge}) => {
+//     return (
+//         <>
+//         <img className='serie-image'
+//         loading='lazy'
+//         src={imagelarge}
+//         srcSet={`${imagesmall} 300w, ${imagemedium} 768w, ${imagelarge} 1280w`} 
+//         alt={title} />
+//             <p className='year'> {year} </p>
+//             <span className='category'><img src="./assets/icon-category-tv.svg" alt="" /> <p>{category}</p> </span>
+//             <p className='rating'> {rating} </p>
+//             <p className='title'> {title} </p>
+//     </>
+//     )
+// }
 
 export default Series;

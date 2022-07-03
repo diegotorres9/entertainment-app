@@ -5,8 +5,8 @@ class Bookmark extends React.Component {
         return(
             <div>
                 <Searchbar />
-                <h1>Bookmarked Movies</h1>
-                <h2>Bookmarked Series</h2>
+                <p>Bookmarked Movies</p>
+                <p>Bookmarked TV Series</p>
             </div>
         )
     }

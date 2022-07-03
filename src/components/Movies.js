@@ -1,48 +1,42 @@
 import React from 'react';
-import movies from '../movies';
+import data from "../data.json";
+// import movieIcon from "../icon-category-movie.svg";
 import Searchbar from './Searchbar';
 
 class Movies extends React.Component {
     render() {
         return (
             <div>
-            <Searchbar />
+            <Searchbar 
+            />
                 <div className='grid'>
                 <h1 className='title' style={{color: "#fff"}}>Movies</h1>
-                {movies.map((movie, key) => {
-                    return(
-                        <div className="movie" key={key}>
-                        <Movie
-                        key={key}
-                        title={movie.title}
-                        category={movie.category}
-                        year={movie.year}
-                        rating={movie.rating}
-                        imagesmall={movie.thumbnail.regular.small}
-                        imagemedium={movie.thumbnail.regular.medium}
-                        imagelarge={movie.thumbnail.regular.large}
-                        />
+                {
+                    data.filter(movie => {
+                        if(movie.category === "Movie"){
+                            return movie
+                        }
+                    }).map((movie, key) => (
+                        <div className='movie' key={key}>
+                            <p>{movie.title}</p>
+                            <p>{movie.year}</p>
+                            {/* <img src={movieIcon} alt="Movie Icon." /> */}
+                            <p>{movie.category}</p>
+                            <p>{movie.rating}</p>
+                            <img src={movie.thumbnail.regular.small}
+                                srcSet={`
+                                ${movie.thumbnail.regular.small} 300w,
+                                ${movie.thumbnail.regular.medium} 768w,
+                                ${movie.thumbnail.regular.large} 1280w
+                                `}
+                                alt="A Still from the movie." />
                         </div>
-                    )
-                })}
+                    ))
+                }
                 </div>
             </div>
         )
     }
 }
-const Movie = ({title, category, year, rating, imagesmall, imagemedium, imagelarge}) => {
-    return (
-        <>
-            <img className='movie-image'
-            loading='lazy'
-            src={imagelarge}
-            srcSet={`${imagesmall} 300w, ${imagemedium} 768w, ${imagelarge} 1280w`} 
-            alt={title} />
-                <p className='year'> {year} </p>
-                <span className='category'><img src="./assets/icon-category-movie.svg" alt="" /> <p>{category} </p></span>
-                <p className='rating'> {rating} </p>
-                <p className='title'> {title} </p>
-        </>
-    )
-} 
+
 export default Movies;
