@@ -98,3 +98,38 @@ h1, h2, h3, h4, h5, p, a {
   font-family: 'Outfit', sans-serif;
   color: #fff;
 }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(4, 300px);
+  gap: 15px;
+}
+.grid .movie {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.grid .movie .movie-details {
+  display: flex;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+}
+.grid .movie .movie-details .seperator {
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background: #979797;
+  margin: 0 8px;
+}
+.grid .movie .bookmark-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+.grid .movie img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
