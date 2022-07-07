@@ -16,8 +16,7 @@
     "category": "Movie",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": true,
-    "isMovie": true
+    "isTrending": true
   },
   {
     "title": "Bottom Gear",

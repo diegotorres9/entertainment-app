@@ -1,6 +1,5 @@
 import React from 'react';
 import data from "../data.json";
-// import movieIcon from "../icon-category-movie.svg";
 import Searchbar from './Searchbar';
 
 class Movies extends React.Component {
@@ -9,18 +8,14 @@ class Movies extends React.Component {
             <div>
             <Searchbar 
             />
-            <h1 className='title'>Movies</h1>
+            <h1 className='page-title'>Movies</h1>
                 <div className='grid'>
                 {
-                    data.filter(movie => {
-                        if(movie.isMovie === true){
-                            return movie
-                        }
-                        return movie
-                    }).map((movie, key) => (
-                        <div className='movie' key={key}>
+                    data.filter(movie => (movie.category === "Movie")
+                    ).map((movie, key) => (
+                        <div className='grid-item' key={key}>
                         <img 
-                            className='movie-image'
+                            className='grid-image'
                             src={movie.thumbnail.regular.small}
                             srcSet={`
                             ${movie.thumbnail.regular.small} 300w,
@@ -29,7 +24,7 @@ class Movies extends React.Component {
                             `}
                             alt={"A still from " + movie.title + "."}  
                             />
-                            <div className="movie-details">
+                            <div className="details">
                             <p>{movie.year}</p>
                             <span className="seperator"></span>
                             <svg 
@@ -56,8 +51,8 @@ class Movies extends React.Component {
                                 strokeWidth="1.5" 
                                 fill="none" />
                              </svg>
-                            <p className='movie-title'>{movie.title}</p>
-
+                             <span className="bookmark-icon-bg"></span>
+                            <p className='title'>{movie.title}</p>
                         </div>
                     ))
                 }
