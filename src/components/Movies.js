@@ -13,12 +13,11 @@ class Movies extends React.Component {
                 <div className='grid'>
                 {
                     data.filter(movie => {
-                        if(movie.category === "Movie"){
+                        if(movie.isMovie === true){
                             return movie
                         }
                         return movie
                     }).map((movie, key) => (
-
                         <div className='movie' key={key}>
                         <img 
                             className='movie-image'
@@ -57,7 +56,7 @@ class Movies extends React.Component {
                                 strokeWidth="1.5" 
                                 fill="none" />
                              </svg>
-                            <p>{movie.title}</p>
+                            <p className='movie-title'>{movie.title}</p>
 
                         </div>
                     ))

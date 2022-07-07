@@ -100,9 +100,10 @@ h1, h2, h3, h4, h5, p, a {
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: repeat(4, 300px);
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  /* grid-template-rows: repeat(4, 300px); */
   gap: 15px;
+  margin: 0px 16px;
 }
 .grid .movie {
   display: flex;
@@ -110,12 +111,19 @@ h1, h2, h3, h4, h5, p, a {
   margin: 0;
   padding: 0;
   position: relative;
+  /* width: 222px; */
+}
+.grid .movie .movie-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
 }
 .grid .movie .movie-details {
   display: flex;
   align-items: center;
   font-family: 'Outfit', sans-serif;
   font-weight: 300;
+  font-size: 11px;
 }
 .grid .movie .movie-details .seperator {
   width: 3px;
@@ -123,6 +131,9 @@ h1, h2, h3, h4, h5, p, a {
   border-radius: 100%;
   background: #979797;
   margin: 0 8px;
+}
+.grid .movie .movie-details .category-icon {
+  padding-right: 4px;
 }
 .grid .movie .bookmark-icon {
   position: absolute;
@@ -132,4 +143,6 @@ h1, h2, h3, h4, h5, p, a {
 .grid .movie img {
   -o-object-fit: cover;
      object-fit: cover;
+     border-radius: 8px;
+     /* background-size: 100%; */
 }
