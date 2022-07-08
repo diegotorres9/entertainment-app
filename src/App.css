@@ -121,6 +121,14 @@ h1, h2, h3, h4, h5, p, a {
   font-weight: 500;
   font-size: 14px;
 }
+.trending .grid-item .title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  position: absolute;
+  top: 95px;
+  left: 10px;
+}
 .grid .grid-item .details {
   display: flex;
   align-items: center;
@@ -128,7 +136,24 @@ h1, h2, h3, h4, h5, p, a {
   font-weight: 300;
   font-size: 11px;
 }
+.trending .grid-item .details {
+  display: flex;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  position: absolute;
+  top: 80px;
+  left: 10px;
+}
 .grid .grid-item .details .seperator {
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background: #979797;
+  margin: 0 8px;
+}
+.trending .grid-item .details .seperator {
   width: 3px;
   height: 3px;
   border-radius: 100%;
@@ -138,7 +163,16 @@ h1, h2, h3, h4, h5, p, a {
 .grid .grid-item .details .category-icon {
   padding-right: 4px;
 }
+.trending .grid-item .details .category-icon {
+  padding-right: 4px;
+}
 .grid .grid-item .bookmark-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+}
+.trending .grid-item .bookmark-icon {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -154,9 +188,35 @@ h1, h2, h3, h4, h5, p, a {
   right: 6px;
   border-radius: 100%;
 }
+.trending .grid-item .bookmark-icon-bg {
+  background: #10141E;
+  opacity: 0.5;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border-radius: 100%;
+}
 .grid .grid-item .grid-image {
   -o-object-fit: cover;
      object-fit: cover;
      border-radius: 8px;
+}
+.trending .grid-item .grid-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+     border-radius: 8px;
      /* background-size: 100%; */
+}
+.trending {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin: 0 16px;
+  gap: 16px;
+}
+.trending .grid-item {
+  flex: 0 0 auto;
+  position: relative;
 }
