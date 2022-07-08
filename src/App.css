@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, p, a {
   font-weight: 500;
   font-size: 15px;
   position: absolute;
-  top: 95px;
+  top: 68px;
   left: 10px;
 }
 .grid .grid-item .details {
@@ -143,8 +143,8 @@ h1, h2, h3, h4, h5, p, a {
   font-weight: 300;
   font-size: 11px;
   position: absolute;
-  top: 80px;
-  left: 10px;
+  top: 55px;
+  left: 0;
 }
 .grid .grid-item .details .seperator {
   width: 3px;
