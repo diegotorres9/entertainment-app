@@ -6,7 +6,7 @@ class Movies extends React.Component {
     render() {
         return (
             <div>
-            <Searchbar 
+            <Searchbar data={data}
             />
             <h1 className='page-title'>Movies</h1>
                 <div className='grid'>

@@ -220,7 +220,3 @@ h1, h2, h3, h4, h5, p, a {
   flex: 0 0 auto;
   position: relative;
 }
-.trending .grid-item .grid-image {
-  max-width: 240px;
-  max-height: 140px;
-}

@@ -6,7 +6,7 @@ class Home extends React.Component {
     render() {
         return(
             <div>
-            <Searchbar />
+            <Searchbar data={data}/>
                 <h1 className="page-title">Trending</h1>
                 <div className="trending">
                     {
@@ -15,11 +15,10 @@ class Home extends React.Component {
                             <div className="grid-item" key={key}>
                             <img 
                                 className='grid-image'
-                                src={trending.thumbnail.regular.small}
+                                src={trending.thumbnail.trending.small}
                                 srcSet={`
-                                ${trending.thumbnail.regular.small} 300w,
-                                ${trending.thumbnail.regular.medium} 768w,
-                                ${trending.thumbnail.regular.large} 1280w
+                                ${trending.thumbnail.trending.small} 300w,
+                                ${trending.thumbnail.trending.large} 1280w
                                 `}
                                 alt={"A still from " + trending.title + "."}  
                             />

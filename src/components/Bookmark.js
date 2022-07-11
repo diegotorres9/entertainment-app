@@ -5,7 +5,7 @@ class Bookmark extends React.Component {
     render() {
         return(
             <div>
-                <Searchbar />
+                <Searchbar data={data}/>
                 <p className="page-title">Bookmarked Movies</p>
                 <div className="grid">
                     {

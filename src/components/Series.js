@@ -6,7 +6,7 @@ class Series extends React.Component {
     render() {
         return(
             <div>
-            <Searchbar />
+            <Searchbar dta={data}/>
             <h1 className="page-title">Series</h1>
                 <div className="grid">
                 {
