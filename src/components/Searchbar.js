@@ -38,7 +38,8 @@ export default function Searchbar({data}) {
             />
         </div>
         {search.length !== 0 && (
-            <div className="grid">
+            <div className="search-grid">
+                <p className="search-results-found">Found {search.length} results for '{wordEntered}'</p>
                 {
                     search.slice(0, 10).map((value, key) => {
                         return  (

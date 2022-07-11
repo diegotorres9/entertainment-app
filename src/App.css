@@ -220,3 +220,65 @@ h1, h2, h3, h4, h5, p, a {
   flex: 0 0 auto;
   position: relative;
 }
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  gap: 15px;
+  margin: 24px 16px 0 16px;
+}
+.search-grid .search-results-found {
+  font-size: 20px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  grid-column: 1 / 3;
+}
+.search-grid .grid-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative; 
+}
+.search-grid .grid-item .grid-image {
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.search-grid .grid-item .details {
+  display: flex;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+}
+.search-grid .grid-item .seperator {
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background: #979797;
+  margin: 0 8px;
+}
+.search-grid .grid-item .category-icon {
+  padding-right: 4px;
+}
+.search-grid .grid-item .bookmark-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+}
+.search-grid .grid-item .bookmark-icon-bg {
+  background: #10141E;
+  opacity: 0.5;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border-radius: 100%;
+}
+.search-grid .grid-item .title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
