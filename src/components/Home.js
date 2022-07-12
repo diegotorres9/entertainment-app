@@ -41,7 +41,9 @@ class Home extends React.Component {
                                         width="12" 
                                         height="12" 
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                                        <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" 
+                                            fill="#FFF" 
+                                            opacity=".75"/>
                                     </svg>
                                     }
                                     <p>{trending.category}</p>
@@ -56,7 +58,7 @@ class Home extends React.Component {
                                 <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" 
                                 stroke="#FFF"
                                 strokeWidth="1.5" 
-                                fill="none" />
+                                {...trending.isBookmarked === true ? {fill:"#fff"} : {fill:"none"}} />
                              </svg>
                              <span className="bookmark-icon-bg"></span>
                             <p className='title'>{trending.title}</p>
@@ -116,7 +118,7 @@ class Home extends React.Component {
                                     <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" 
                                     stroke="#FFF"
                                     strokeWidth="1.5" 
-                                    fill="none" />
+                                    {...recommended.isBookmarked === true ? {fill:"#fff"} : {fill:"none"}} />
                                 </svg>
                                 <span className="bookmark-icon-bg"></span>
                                 <p className='title'>{recommended.title}</p>
