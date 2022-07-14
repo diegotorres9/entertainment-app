@@ -1,5 +1,6 @@
 import React from 'react';
 import data from "../data.json";
+import BookmarkSVG from './bookmarkSVG';
 import Searchbar from './Searchbar';
 
 class Movies extends React.Component {
@@ -41,16 +42,7 @@ class Movies extends React.Component {
                             <span className="seperator"></span>
                             <p>{movie.rating}</p>
                             </div>
-                            <svg
-                                className='bookmark-icon' 
-                                width="12" 
-                                height="14" 
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" 
-                                stroke="#FFF"
-                                strokeWidth="1.5"
-                                {...movie.isBookmarked === true ? {fill:"#fff"} : {fill:"none"}}/>
-                             </svg>
+                             <BookmarkSVG />
                              <span className="bookmark-icon-bg"></span>
                             <p className='title'>{movie.title}</p>
                         </div>

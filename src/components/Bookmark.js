@@ -1,7 +1,14 @@
 import React from "react";
 import data from "../data.json";
 import Searchbar from "./Searchbar";
+
 class Bookmark extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            bookmarkValue: false
+        };
+    }
     render() {
         return(
             <div>
